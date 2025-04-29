@@ -54,6 +54,8 @@ def load_data():
     df = df[df["ConvertedComp"] <= 250000]
     df = df[df["ConvertedComp"] >= 10000]
     df = df[df['Country'] != 'Other']
+    df["YearsCode"] = df["YearsCode"].apply(clean_experience)
+   
   
   
 
