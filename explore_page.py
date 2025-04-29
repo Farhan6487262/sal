@@ -39,7 +39,7 @@ def load_data():
     df = df[["Country", "EdLevel", "YearsCode", "Employment", "ConvertedComp"]]
     df = df[df["ConvertedComp"].notnull()]
     df = df.dropna()
-     df = df[df["Employment"] == "Employed full-time"]
+    df = df[df["Employment"] == "Employed full-time"]
     df = df.drop("Employment", axis=1)
     
 
