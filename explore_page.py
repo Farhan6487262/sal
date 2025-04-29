@@ -39,9 +39,17 @@ def load_data():
     df = df[["Country", "EdLevel", "YearsCode", "Employment", "ConvertedComp"]]
     df = df[df["ConvertedComp"].notnull()]
     df = df.dropna()
-    df = df[df["Employment"] == "Employed full-time"]
-    df = df.drop("Employment", axis=1)
+   #  df = df[df["Employment"] == "Employed full-time"] replace for other country with 151 and full time employment with 0
+     df = df[df["Employment"] == 0]
     
+    df = df.drop("Employment", axis=1)
+    country_map = shorten_categories(df.Country.value_counts(), 400)
+    df['Country'] = df['Country'].map(country_map)
+    df = df[df["ConvertedComp"] <= 250000]
+    df = df[df["ConvertedComp"] >= 10000]
+    df = df[df['Country'] != 151]
+    df["YearsCode"] = df["YearsCode"].apply(clean_experience)
+    df["EdLevel"] = df["EdLevel"].apply(clean_education)
 
 
 
