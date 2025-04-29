@@ -49,6 +49,12 @@ def load_data():
     df = df[df["ConvertedComp"] >= 10000]
     df = df[df['Country'] != 'Other']
     df["Country"] = df["Country"].replace(151, "USA")
+    country_map = shorten_categories(df.Country.value_counts(), 400)
+    df['Country'] = df['Country'].map(country_map)
+    df = df[df["ConvertedComp"] <= 250000]
+    df = df[df["ConvertedComp"] >= 10000]
+    df = df[df['Country'] != 'Other']
+  
   
 
 
