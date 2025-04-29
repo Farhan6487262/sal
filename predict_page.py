@@ -41,27 +41,9 @@ def show_predict_page():
     # Button to trigger salary calculation
     ok = st.button("Calculate Salary")
 
-   if ok:
+  if ok:
         try:
             # Transform the inputs (country and education_level) using LabelEncoders
-            country_encoded = le_country.transform([country])[0]  # Transform country
-            education_encoded = le_education.transform([education_level])[0]  # Transform education level
-            
-            # Prepare the input array for prediction (experience is already numeric)
-            X = np.array([[country_encoded, education_encoded, experience]], dtype=float)
-            
-            # Predict salary using the model
-            salary = regressor.predict(X)
-            
-            # Display the result
-            st.subheader(f"The estimated salary is ${salary[0]:.2f}")
-        except Exception as e:
-            # Handle potential errors in transformation or prediction
-            st.error(f"Error: {e}")
-            
-            
-            
-            # Transform country and education_level using LabelEncoders
             country_encoded = le_country.transform([country])[0]  # Transform country
             education_encoded = le_education.transform([education_level])[0]  # Transform education level
             
