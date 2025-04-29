@@ -35,7 +35,8 @@ def show_predict_page():
 
 
     # User input fields
-    country =  st.text_input("Country", countries)
+    #country =  st.text_input("Country", countries)
+    country = st.text_input("Country", "")
     education_level = st.selectbox("Education level", education)
     experience = st.slider("Years of Experience", 0, 50, 3)
 
