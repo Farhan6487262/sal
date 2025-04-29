@@ -48,7 +48,7 @@ def load_data():
     df = df[df["ConvertedComp"] <= 250000]
     df = df[df["ConvertedComp"] >= 10000]
     df = df[df['Country'] != 'Other']
-    
+    df["Country"] = df["Country"].replace(151, "USA")
   
 
 
