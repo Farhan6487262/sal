@@ -30,9 +30,9 @@ def clean_education(x):
         return 'Post grad'
     return 'Less than a Bachelors'
 
-#df['EdLevel'] = df['EdLevel'].apply(clean_education) 
+# df['EdLevel'] = df['EdLevel'].apply(clean_education) 
 
-@st.cache
+@st.cache_data
 
 def load_data():
     df = pd.read_csv("survey_results_public.csv")
