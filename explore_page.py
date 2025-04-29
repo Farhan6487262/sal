@@ -40,7 +40,7 @@ def load_data():
     df = df[df["ConvertedComp"].notnull()]
     df = df.dropna()
    #  df = df[df["Employment"] == "Employed full-time"] replace for other country with 151 and full time employment with 0
-     df = df[df["Employment"] == 0]
+    df = df[df["Employment"] == 0]
     
     df = df.drop("Employment", axis=1)
     country_map = shorten_categories(df.Country.value_counts(), 400)
