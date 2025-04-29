@@ -39,7 +39,21 @@ def load_data():
     df = df[["Country", "EdLevel", "YearsCode", "Employment", "ConvertedComp"]]
     df = df[df["ConvertedComp"].notnull()]
     df = df.dropna()
-   
+     df = df[df["Employment"] == "Employed full-time"]
+    df = df.drop("Employment", axis=1)
+    
+
+
+
+
+
+
+
+
+
+
+
+    
     df = df.rename({"ConvertedComp": "Salary"}, axis=1)
     
     return df
