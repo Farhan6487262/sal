@@ -21,17 +21,18 @@ def show_predict_page():
     st.write("Hello! Hope you're doing well.")
     
     countries = (
-        "Pakistan","United States", "India", "United Kingdom", "Germany", "Canada", 
+        "United States", "India", "United Kingdom", "Germany", "Canada", 
         "Brazil", "France", "Spain", "Australia", "Netherlands", 
         "Poland", "Italy", "Russia", "Federation", "Sweden",
     )
 
-   education = (
+    education = (
     "Less than a Bachelors",
-    "Bachelor’s degree",  # ← curly apostrophe
-    "Master’s degree",    # ← curly apostrophe
+    "Bachelor’s degree",  
+    "Master’s degree",   
     "Post grad"
 )
+
 
     # User input fields
     country = st.selectbox("Country", countries)
@@ -41,7 +42,7 @@ def show_predict_page():
     # Button to trigger salary calculation
     ok = st.button("Calculate Salary")
 
-  if ok:
+    if ok:
         try:
             # Transform the inputs (country and education_level) using LabelEncoders
             country_encoded = le_country.transform([country])[0]  # Transform country
@@ -63,4 +64,3 @@ def show_predict_page():
     st.write(f"Country Selected: {country}")
     st.write(f"Education Selected: {education_level}")
     st.write(f"Years of Experience: {experience}")
-
