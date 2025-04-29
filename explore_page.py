@@ -55,7 +55,7 @@ def load_data():
     df = df[df["ConvertedComp"] >= 10000]
     df = df[df['Country'] != 'Other']
     df["YearsCode"] = df["YearsCode"].apply(clean_experience)
-    df["EdLevel"] = df["EdLevel"].apply(clean_education)
+    
     df = df.rename({"ConvertedComp": "Salary"}, axis=1)
   
   
