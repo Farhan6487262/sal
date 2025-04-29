@@ -52,9 +52,7 @@ def show_predict_page():
                 st.error(f"Country '{country}' is not in the trained model's data. Please select a valid country.")
                 return
             
-            if education_level not in le_education.classes_:
-                st.error(f"Education level '{education_level}' is not in the trained model's data. Please select a valid education level.")
-                return
+            
             
             # Transform country and education_level using LabelEncoders
             country_encoded = le_country.transform([country])[0]  # Transform country
