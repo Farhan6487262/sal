@@ -86,7 +86,7 @@ def show_explore_page():
     
     st.write("""mean salary based on experience""")
     #data = df.groupby(["Country"])["Salary".mean().sort_values(ascending= True)]
-    data = df.groupby("YearsCodePro")["Salary"].mean().sort_values(ascending=True)
+    data = df.groupby("YearsCode")["Salary"].mean().sort_values(ascending=True)
 
     st.line_chart(data)
     
