@@ -27,7 +27,10 @@ def show_predict_page():
     )
 
     education = (
-        "Less than a Bachelors", "Bachelor's degree", "Master's degree", "Post grad"
+        "Less than a Bachelors",
+        "Bachelor's degree",
+        "Master's degree",
+        "Post grad"
     )
 
     # User input fields
